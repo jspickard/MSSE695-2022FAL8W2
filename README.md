@@ -94,4 +94,12 @@ James Spickard, jspickard@regis.edu
 {TBD}
 
 # Troubleshooting.
-{TBD}
+1. If necessary, delete the git repo dir, stop and remove all containers, then restart from step 2 in the instructions.
+```shell
+# Ubuntu Server 18.04.6 LTS 64-bit
+# Fedora 37 Server x86_64 
+cd $HOME/nextcloud/data
+sudo rm -r ./MSSE695-2022FAL8W2
+docker stop $(docker ps -a -q)
+docker rm $(docker ps -a -q)
+```
