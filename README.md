@@ -2,33 +2,80 @@
 The repo is being used to aid in the Research and Development (R&D) of containerization by using the NextCloud Free Open Source Software (FOSS) as the main service of installation. This repo adds a self-signed certificate to implement SSL and the https protocol upon application launch to the existing content described from this website:
 https://opensourcetechtrn.blogspot.com/2021/07/nextcloud-in-docker.html
 
-# Prereqs
-- An OS with an known pingable IP address that can install Docker (if there are port restrictions, allow 8081 at a minimum).
-- Docker is installed.
+# What's Required
+- A test computer connected to a local network with an internet browser (i.e.: Windows 10 Home Version 21H2 with Edge 64-bit Version 107.0.1418.52 was used for the main test.)
+- A server with the following:
+1.  An Operating System (OS) that can install Docker.
+2.  A known pingable IP address on a local network.
 ```shell
 # Ubuntu Server 18.04.6 LTS 64-bit
+# Fedora 37 Server x86_64 
+ip a    # ping from test computer (i.e.: Windows 10 command prompt "ping 192.168.238.131")
+```
+3.  (if there are port restrictions, allow 8081 at a minimum).
+4. Docker and Docker-Compose is installed.
+```shell
+# Ubuntu Server 18.04.6 LTS 64-bit
+# Fedora 37 Server x86_64 
 curl -fsSL get.docker.com | sudo sh
+systemctl start docker
+
+# Ubuntu Server 18.04.6 LTS 64-bit
+apt  install docker-compose
+
+# Fedora 37 Server x86_64 
+dnf install docker-compose
+```
+5. Other installations may be required throughout (i.e.: git); install as needed.
+```shell
+# Fedora 37 Server x86_64 
+dnf install git-all
 ```
 
 # Installation instructions
-## Run the following commands
-- Ubuntu Server 18.04.6 LTS 64-bit
+### Notes: 
+#### Example commands have been provided. Use what is relative to your OS. 
+#### Elevated privledges are assumed (including "sudo"). 
+## Steps
+1. Make the required directories and enter into.
 ```shell
+# Ubuntu Server 18.04.6 LTS 64-bit
+# Fedora 37 Server x86_64 
 mkdir $HOME/nextcloud
 mkdir $HOME/nextcloud/data
 mkdir $HOME/nextcloud/data/dockerfile
 mkdir $HOME/nextcloud/datadb
 cd $HOME/nextcloud/data
+```
+2. Clone this git and enter.
+```shell
+# Ubuntu Server 18.04.6 LTS 64-bit
+# Fedora 37 Server x86_64 
 git clone https://github.com/jspickard/MSSE695-2022FAL8W2.git
 cd ./MSSE695-2022FAL8W2/nextcloud-js/dockerfile
+```
+3. Change permissions to run dependent script.
+```shell
+# Ubuntu Server 18.04.6 LTS 64-bit
+# Fedora 37 Server x86_64 
 chmod 700 ./nextcloud-ssl-js.sh
+```
+4. Build docker image.
+```shell
+# Ubuntu Server 18.04.6 LTS 64-bit
+# Fedora 37 Server x86_64 
 docker build -t nextcloud-js .
+```
+5. Run container from image.
+```shell
+# Ubuntu Server 18.04.6 LTS 64-bit
+# Fedora 37 Server x86_64 
 cd ..
 docker-compose up
 ```
 
 # Operating instructions
-- Open a browser and goto the following link (replace ###.###.###.### with the OS's known IP address)
+- Open a browser on your test computer and goto the following link (replace ###.###.###.### with the OS's known IP address)
 https://###.###.###.###:8081
 - Follow the NextCloud prompts for proper setup (additional features may require more ports to be open).
 
