@@ -37,7 +37,7 @@ dnf install git-all
 #### Example commands have been provided. Use what is relative to your OS. 
 #### Elevated privledges are assumed (including "sudo"). 
 ## Steps
-1. Make the required directories.
+1. Make the required directories and enter into.
 ```shell
 # Ubuntu Server 18.04.6 LTS 64-bit
 # Fedora 37 Server x86_64 
@@ -45,20 +45,19 @@ mkdir $HOME/nextcloud
 mkdir $HOME/nextcloud/data
 mkdir $HOME/nextcloud/data/dockerfile
 mkdir $HOME/nextcloud/datadb
-```
-2. Enter into new dir and clone this git.
-```shell
-# Ubuntu Server 18.04.6 LTS 64-bit
-# Fedora 37 Server x86_64 
 cd $HOME/nextcloud/data
-git clone https://github.com/jspickard/MSSE695-2022FAL8W2.git
-
 ```
-3. Enter into dockerfile dir and change permissions on dependent script.
+2. Clone this git and enter.
 ```shell
 # Ubuntu Server 18.04.6 LTS 64-bit
 # Fedora 37 Server x86_64 
+git clone https://github.com/jspickard/MSSE695-2022FAL8W2.git
 cd ./MSSE695-2022FAL8W2/nextcloud-js/dockerfile
+```
+3. Change permissions to run dependent script.
+```shell
+# Ubuntu Server 18.04.6 LTS 64-bit
+# Fedora 37 Server x86_64 
 chmod 700 ./nextcloud-ssl-js.sh
 ```
 4. Build docker image.
