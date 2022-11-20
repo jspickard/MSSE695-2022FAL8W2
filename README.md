@@ -80,7 +80,7 @@ docker-compose up
 # Operating instructions
 - Open a browser on your test computer and goto the following link (replace ###.###.###.### with the OS's known IP address)
 https://###.###.###.###:8081
-- Acknowledge the "NET::ERR_CERT_AUTHORITY_INVALID" self-signed cert warning and proceed (note: Non-SSL site http://###.###.###.###:8080 is still accessible. The following guide can be used to establish redirect. )
+- Acknowledge the "NET::ERR_CERT_AUTHORITY_INVALID" self-signed cert warning and proceed (note: Non-SSL site http://###.###.###.###:8080 was disabled for this demonstration. Redirection with containers proved difficult using the existing port route configuration. The following guide should be referenced for information on redirect. )
 https://www.namecheap.com/support/knowledgebase/article.aspx/9821/38/apache-redirect-to-https/
 - Follow the NextCloud prompts for proper setup (additional features may require more ports to be open).
 
