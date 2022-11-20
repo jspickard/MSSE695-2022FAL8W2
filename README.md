@@ -19,10 +19,12 @@ ip a    # ping from test computer (i.e.: Windows 10 command prompt "ping 192.168
 # Fedora 37 Server x86_64 
 curl -fsSL get.docker.com | sudo sh
 systemctl start docker
-
+```
+```shell
 # Ubuntu Server 18.04.6 LTS 64-bit
 apt  install docker-compose
-
+```
+```shell
 # Fedora 37 Server x86_64 
 dnf install docker-compose
 ```
@@ -78,7 +80,7 @@ docker-compose up
 # Operating instructions
 - Open a browser on your test computer and goto the following link (replace ###.###.###.### with the OS's known IP address)
 https://###.###.###.###:8081
-- Acknowledge the self-signed cert warning and proceed (note: Non-SSL site http://###.###.###.###:8080 is still accessible. The following guide can be used to establish redirect. )
+- Acknowledge the "NET::ERR_CERT_AUTHORITY_INVALID" self-signed cert warning and proceed (note: Non-SSL site http://###.###.###.###:8080 is still accessible. The following guide can be used to establish redirect. )
 https://www.namecheap.com/support/knowledgebase/article.aspx/9821/38/apache-redirect-to-https/
 - Follow the NextCloud prompts for proper setup (additional features may require more ports to be open).
 
