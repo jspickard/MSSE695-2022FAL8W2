@@ -80,8 +80,7 @@ docker-compose up
 # Operating instructions
 - Open a browser on your test computer and goto the following link (replace ###.###.###.### with the OS's known IP address)
 https://###.###.###.###:8081
-- Acknowledge the "NET::ERR_CERT_AUTHORITY_INVALID" self-signed cert warning and proceed (note: Non-SSL site http://###.###.###.###:8080 was disabled for this demonstration. Redirection with containers proved difficult using the existing port route configuration. The following guide should be referenced for information on redirect. )
-https://www.namecheap.com/support/knowledgebase/article.aspx/9821/38/apache-redirect-to-https/
+- Acknowledge the "NET::ERR_CERT_AUTHORITY_INVALID" self-signed cert warning and proceed.
 - Follow the NextCloud prompts for proper setup (additional features may require more ports to be open).
 
 # Copyright and licensing information.
@@ -90,8 +89,9 @@ The owner of this repo does not own NextCloud; these files are intended to aid i
 # Contact information for the distributor or programmer.
 James Spickard, jspickard@regis.edu
 
-# Known bugs.
-{TBD}
+# Known bugs/issues.
+1.  The Non-SSL site http://###.###.###.###:8080 was disabled for this demonstration. Redirection with containers proved difficult using the existing port route configuration. The following guide should be referenced for information on redirect.
+https://www.namecheap.com/support/knowledgebase/article.aspx/9821/38/apache-redirect-to-https/
 
 # Troubleshooting.
 1. If necessary, delete the git repo dir, stop and remove all containers, then restart from step 2 in the instructions.
