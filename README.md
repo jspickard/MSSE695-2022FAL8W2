@@ -1,8 +1,16 @@
-# MSSE695-2022FAL8W2
-The repo is being used to aid in the Research and Development (R&D) of containerization by using the NextCloud Free Open Source Software (FOSS) as the main service of installation. This repo adds a self-signed certificate to implement SSL and the https protocol upon application launch to the existing content described from this website:
+# Custom SSL image build files for NextCloud container
+- James Spickard
+- Regis University
+- MSSE695 - Software Engineering Res & Dev
+- Fall 2022 8 Week 2 Semester
+- Doctor Kevin Pyatt
+- To be completed by 12/11/2022
+
+## Description
+This repo is being used to aid in the Research and Development (R&D) of containerization by using the NextCloud Free Open Source Software (FOSS) as the main service of installation. This repo adds a self-signed certificate to implement SSL and the https protocol upon application launch to the existing content described from this website:
 https://opensourcetechtrn.blogspot.com/2021/07/nextcloud-in-docker.html
 
-# What's Required
+## What's Required
 - A test computer connected to a local network with an internet browser (i.e.: Windows 10 Home Version 21H2 with Edge 64-bit Version 107.0.1418.52 was used for the main test.)
 - A server with the following:
 1.  An Operating System (OS) that can install Docker.
@@ -12,7 +20,7 @@ https://opensourcetechtrn.blogspot.com/2021/07/nextcloud-in-docker.html
 # Fedora 37 Server x86_64 
 ip a    # ping from test computer (i.e.: Windows 10 command prompt "ping 192.168.238.131")
 ```
-3.  (if there are port restrictions, allow 8081 at a minimum).
+3.  If the server has port restrictions, allow 8081 at a minimum.
 4. Docker and Docker-Compose is installed.
 ```shell
 # Ubuntu Server 18.04.6 LTS 64-bit
@@ -34,11 +42,11 @@ dnf install docker-compose
 dnf install git-all
 ```
 
-# Installation instructions
-### Notes: 
-#### Example commands have been provided. Use what is relative to your OS. 
-#### Elevated privledges are assumed (including "sudo"). 
-## Steps
+## Installation instructions
+#### Notes: 
+- Example commands have been provided. Use what is relative to your OS. 
+- Elevated privledges are assumed (including "sudo"). 
+### Steps
 1. Make the required directories.
 ```shell
 # Ubuntu Server 18.04.6 LTS 64-bit
@@ -77,23 +85,23 @@ cd ..
 docker-compose up
 ```
 
-# Operating instructions
+## Operating instructions
 - Open a browser on your test computer and goto the following link (replace ###.###.###.### with the OS's known IP address)
 https://###.###.###.###:8081
 - Acknowledge the "NET::ERR_CERT_AUTHORITY_INVALID" self-signed cert warning and proceed.
 - Follow the NextCloud prompts for proper setup (additional features may require more ports to be open).
 
-# Copyright and licensing information.
+## Copyright and licensing information.
 The owner of this repo does not own NextCloud; these files are intended to aid in the R&D of containerization only.
 
-# Contact information for the distributor or programmer.
+## Contact information for the distributor or programmer.
 James Spickard, jspickard@regis.edu
 
-# Known bugs/issues.
+## Known bugs/issues.
 1.  The Non-SSL site http://###.###.###.###:8080 was disabled for this demonstration. Redirection with containers proved difficult using the existing port route configuration. The following guide should be referenced for information on redirect.
 https://www.namecheap.com/support/knowledgebase/article.aspx/9821/38/apache-redirect-to-https/
 
-# Troubleshooting.
+## Troubleshooting.
 1. If necessary, delete the git repo dir, stop and remove all containers, then restart from step 2 in the instructions.
 ```shell
 # Ubuntu Server 18.04.6 LTS 64-bit
@@ -103,3 +111,6 @@ sudo rm -r ./MSSE695-2022FAL8W2
 docker stop $(docker ps -a -q)
 docker rm $(docker ps -a -q)
 ```
+
+## References
+- Open Source Tech Training. (2021, July 27). Nextcloud in Docker! opensourcetechtrn.blogspot.com. https://opensourcetechtrn.blogspot.com/2021/07/nextcloud-in-docker.html 
