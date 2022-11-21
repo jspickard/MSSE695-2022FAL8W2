@@ -4,11 +4,10 @@
 - MSSE695 - Software Engineering Res & Dev
 - Fall 2022 8 Week 2 Semester
 - Doctor Kevin Pyatt
-- To be completed by 12/11/2022
+- Due date: 12/11/2022
 
 ## Description
-This repo is being used to aid in the Research and Development (R&D) of containerization by using the NextCloud Free Open Source Software (FOSS) as the main service of installation. This repo adds a self-signed certificate to implement SSL and the https protocol upon application launch to the existing content described from this website:
-https://opensourcetechtrn.blogspot.com/2021/07/nextcloud-in-docker.html
+This repo is being used to aid in the Research and Development (R&D) of containerization by using the NextCloud Free Open Source Software (FOSS) as the main service of installation. This repo adds a self-signed certificate to implement SSL and the https protocol upon application launch to the existing content described in [Reference](https://github.com/jspickard/MSSE695-2022FAL8W2/edit/main/README.md#references) 1.
 
 ## What's Required
 - A test computer connected to a local network with an internet browser (i.e.: Windows 10 Home Version 21H2 with Edge 64-bit Version 107.0.1418.52 was used for the main test.)
@@ -113,4 +112,4 @@ docker rm $(docker ps -a -q)
 ```
 
 ## References
-- Open Source Tech Training. (2021, July 27). Nextcloud in Docker! opensourcetechtrn.blogspot.com. https://opensourcetechtrn.blogspot.com/2021/07/nextcloud-in-docker.html 
+1. Open Source Tech Training. (2021, July 27). Nextcloud in Docker! opensourcetechtrn.blogspot.com. https://opensourcetechtrn.blogspot.com/2021/07/nextcloud-in-docker.html 
