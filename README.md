@@ -18,7 +18,7 @@ ip a    # ping from test computer (i.e.: Windows 10 command prompt "ping 192.168
 # Ubuntu Server 18.04.6 LTS 64-bit
 # Fedora 37 Server x86_64 
 curl -fsSL get.docker.com | sudo sh
-systemctl start docker
+systemctl start docker    # Fedora it did not start automatically
 ```
 ```shell
 # Ubuntu Server 18.04.6 LTS 64-bit
