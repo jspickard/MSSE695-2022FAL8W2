@@ -115,11 +115,11 @@ https://www.namecheap.com/support/knowledgebase/article.aspx/9821/38/apache-redi
 ```shell
 # Ubuntu Server 18.04.6 LTS 64-bit
 # Fedora 37 Server x86_64 
+docker stop $(docker ps -a -q)    # stop all containers
+docker rm $(docker ps -a -q)    # remove all containers
 cd $HOME/nextcloud/data
-sudo rm -r ./MSSE695-2022FAL8W2
-docker stop $(docker ps -a -q)
-docker rm $(docker ps -a -q)
-docker image prune -a
+sudo rm -r ./MSSE695-2022FAL8W2    # delete copied git dir
+docker image prune -a    # remove all images
 # If need to delete admin account and redo setup, delete/rename datadb and data dirs from Step 1
 
 ```
