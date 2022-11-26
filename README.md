@@ -109,6 +109,7 @@ cd $HOME/nextcloud/data
 sudo rm -r ./MSSE695-2022FAL8W2
 docker stop $(docker ps -a -q)
 docker rm $(docker ps -a -q)
+docker image prune
 ```
 
 ## References
