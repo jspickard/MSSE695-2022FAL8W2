@@ -24,6 +24,11 @@ ip a    # get IP here then ping from test computer (i.e.: Windows 10 command pro
 4. Docker and Docker-Compose is installed.
 ```shell
 # Ubuntu Server 18.04.6 LTS 64-bit
+apt-get install curl
+
+```
+```shell
+# Ubuntu Server 18.04.6 LTS 64-bit
 # Fedora 37 Server x86_64 
 curl -fsSL get.docker.com | sudo sh
 systemctl start docker    # Fedora it did not start automatically
@@ -119,7 +124,7 @@ docker stop $(docker ps -a -q)    # stop all containers
 docker rm $(docker ps -a -q)    # remove all containers
 cd $HOME/nextcloud/data
 sudo rm -r ./MSSE695-2022FAL8W2    # delete copied git dir
-docker image prune -a    # remove all images
+docker image prune -a -f    # remove all images
 # If need to delete admin account and redo setup, delete/rename datadb and data dirs from Step 1
 
 ```
