@@ -18,6 +18,7 @@ This repo is being used to aid in the Research and Development (R&D) of containe
 # Ubuntu Server 18.04.6 LTS 64-bit
 # Fedora 37 Server x86_64 
 ip a    # get IP here then ping from test computer (i.e.: Windows 10 command prompt "ping 192.168.238.131")
+
 ```
 3.  If the server has port restrictions, allow 8081 at a minimum.
 4. Docker and Docker-Compose is installed.
@@ -26,19 +27,23 @@ ip a    # get IP here then ping from test computer (i.e.: Windows 10 command pro
 # Fedora 37 Server x86_64 
 curl -fsSL get.docker.com | sudo sh
 systemctl start docker    # Fedora it did not start automatically
+
 ```
 ```shell
 # Ubuntu Server 18.04.6 LTS 64-bit
 apt  install docker-compose
+
 ```
 ```shell
 # Fedora 37 Server x86_64 
 dnf install docker-compose
+
 ```
 5. Other installations may be required throughout (i.e.: git); install as needed.
 ```shell
 # Fedora 37 Server x86_64 
 dnf install git-all
+
 ```
 
 ## Installation instructions
@@ -54,6 +59,7 @@ mkdir $HOME/nextcloud
 mkdir $HOME/nextcloud/data
 mkdir $HOME/nextcloud/data/dockerfile
 mkdir $HOME/nextcloud/datadb
+
 ```
 2. Enter into new dir and clone this git.
 ```shell
@@ -62,6 +68,7 @@ mkdir $HOME/nextcloud/datadb
 cd $HOME/nextcloud/data
 git clone https://github.com/jspickard/MSSE695-2022FAL8W2.git
 
+
 ```
 3. Enter into dockerfile dir and change permissions on dependent script.
 ```shell
@@ -69,12 +76,14 @@ git clone https://github.com/jspickard/MSSE695-2022FAL8W2.git
 # Fedora 37 Server x86_64 
 cd ./MSSE695-2022FAL8W2/nextcloud-js/dockerfile
 chmod 700 ./nextcloud-ssl-js.sh
+
 ```
 4. Build docker image.
 ```shell
 # Ubuntu Server 18.04.6 LTS 64-bit
 # Fedora 37 Server x86_64 
 docker build -t nextcloud-js .
+
 ```
 5. Run container from image.
 ```shell
@@ -82,6 +91,7 @@ docker build -t nextcloud-js .
 # Fedora 37 Server x86_64 
 cd ..
 docker-compose up
+
 ```
 
 ## Operating instructions
@@ -110,6 +120,7 @@ sudo rm -r ./MSSE695-2022FAL8W2
 docker stop $(docker ps -a -q)
 docker rm $(docker ps -a -q)
 docker image prune -a
+
 ```
 
 ## References
