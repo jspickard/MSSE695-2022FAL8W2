@@ -119,6 +119,7 @@ cd $HOME/nextcloud/data
 sudo rm -r ./MSSE695-2022FAL8W2
 docker stop $(docker ps -a -q)
 docker rm $(docker ps -a -q)
+# If need to delete admin account and redo setup, delete/rename datadb and data dirs from Step 1
 docker image prune -a
 
 ```
