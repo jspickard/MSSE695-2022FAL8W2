@@ -1,9 +1,9 @@
 # Custom SSL image build files for NextCloud container
-- James Spickard
-- Regis University
-- MSSE695 - Software Engineering Res & Dev
-- Fall 2022 8 Week 2 Semester
-- Doctor Kevin Pyatt
+- Author: James Spickard
+- School: Regis University
+- Class: MSSE695 - Software Engineering Res & Dev
+- Semester: Fall 2022 8 Week 2
+- Professor: Doctor Kevin Pyatt
 - Due date: 12/11/2022
 
 ## Description
