@@ -17,7 +17,7 @@ This repo is being used to aid in the Research and Development (R&D) of containe
 ```shell
 # Ubuntu Server 18.04.6 LTS 64-bit
 # Fedora 37 Server x86_64 
-ip a    # ping from test computer (i.e.: Windows 10 command prompt "ping 192.168.238.131")
+ip a    # get IP here then ping from test computer (i.e.: Windows 10 command prompt "ping 192.168.238.131")
 ```
 3.  If the server has port restrictions, allow 8081 at a minimum.
 4. Docker and Docker-Compose is installed.
