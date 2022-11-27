@@ -112,7 +112,7 @@ The owner of this repo does not own NextCloud; these files are intended to aid i
 James Spickard, jspickard@regis.edu
 
 ## Known bugs/issues.
-1.  The Non-SSL site http://###.###.###.###:8080 was disabled for this demonstration. Redirection with containers proved difficult using the existing port route configuration. The following guide should be referenced for information on redirect.
+1.  The Non-SSL site http://###.###.###.###:8080 was originally disabled for this demonstration, but was re-enabled for experimenting with the buddy CI/CD tool. Recommend disabling port 8080:80 traffic again to keep SSL only. Redirection with containers proved difficult using the existing port route configuration. The following guide should be referenced for information on redirect.
 https://www.namecheap.com/support/knowledgebase/article.aspx/9821/38/apache-redirect-to-https/
 
 ## Troubleshooting.
