@@ -24,19 +24,19 @@ ip a    # get IP here then ping from test computer (i.e.: Windows 10 command pro
 4. Docker and Docker-Compose is installed.
 ```shell
 # Ubuntu Server 18.04.6 LTS 64-bit
-apt-get install curl
+sudo apt-get install curl
 
 ```
 ```shell
 # Ubuntu Server 18.04.6 LTS 64-bit
 # Fedora 37 Server x86_64 
-curl -fsSL get.docker.com | sudo sh
-systemctl start docker    # Fedora it did not start automatically
+sudo curl -fsSL get.docker.com | sudo sh
+sudo systemctl start docker    # Fedora it did not start automatically
 
 ```
 ```shell
 # Ubuntu Server 18.04.6 LTS 64-bit
-apt  install docker-compose
+sudo apt  install docker-compose
 
 ```
 ```shell
@@ -54,7 +54,6 @@ dnf install git-all
 ## Installation instructions
 #### Notes: 
 - Example commands have been provided. Use what is relative to your OS. 
-- Elevated privledges are assumed (including "sudo"). 
 ### Steps
 1. Make the required directories.
 ```shell
@@ -71,7 +70,7 @@ mkdir $HOME/nextcloud/datadb
 # Ubuntu Server 18.04.6 LTS 64-bit
 # Fedora 37 Server x86_64 
 cd $HOME/nextcloud/data
-git clone https://github.com/jspickard/MSSE695-2022FAL8W2.git
+sudo git clone https://github.com/jspickard/MSSE695-2022FAL8W2.git
 
 
 ```
@@ -80,14 +79,14 @@ git clone https://github.com/jspickard/MSSE695-2022FAL8W2.git
 # Ubuntu Server 18.04.6 LTS 64-bit
 # Fedora 37 Server x86_64 
 cd ./MSSE695-2022FAL8W2/nextcloud-js/dockerfile
-chmod 700 ./nextcloud-ssl-js.sh
+sudo chmod 700 ./nextcloud-ssl-js.sh
 
 ```
 4. Build docker image.
 ```shell
 # Ubuntu Server 18.04.6 LTS 64-bit
 # Fedora 37 Server x86_64 
-docker build -t nextcloud-js .
+sudo docker build -t nextcloud-js .
 
 ```
 5. Run container from image.
@@ -95,7 +94,7 @@ docker build -t nextcloud-js .
 # Ubuntu Server 18.04.6 LTS 64-bit
 # Fedora 37 Server x86_64 
 cd ..
-docker-compose up
+sudo docker-compose up
 
 ```
 
@@ -120,11 +119,11 @@ https://www.namecheap.com/support/knowledgebase/article.aspx/9821/38/apache-redi
 ```shell
 # Ubuntu Server 18.04.6 LTS 64-bit
 # Fedora 37 Server x86_64 
-docker stop $(docker ps -a -q)    # stop all containers
-docker rm $(docker ps -a -q)    # remove all containers
+sudo docker stop $(docker ps -a -q)    # stop all containers
+sudo docker rm $(docker ps -a -q)    # remove all containers
 cd $HOME/nextcloud/data
 sudo rm -r ./MSSE695-2022FAL8W2    # delete copied git dir
-docker image prune -a -f    # remove all images
+sudo docker image prune -a -f    # remove all images
 # If need to delete admin account and redo setup, delete/rename datadb and data dirs from Step 1
 
 ```
