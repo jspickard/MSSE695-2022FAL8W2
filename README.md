@@ -62,6 +62,8 @@ dnf install git-all
 mkdir $HOME/nextcloud
 mkdir $HOME/nextcloud/data
 mkdir $HOME/nextcloud/datadb
+mkdir /var/lib/mysql
+mkdir /var/www/html
 
 ```
 2. Enter into new dir and clone this git.
