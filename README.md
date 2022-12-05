@@ -125,7 +125,8 @@ sudo docker rm $(sudo docker ps -a -q)    # remove all containers
 cd $HOME/nextcloud/data
 sudo rm -r ./MSSE695-2022FAL8W2    # delete copied git dir
 sudo docker image prune -a -f    # remove all images
-sudo rm -R $HOME/nextcloud # !!!WARNING!!! Deletes Volume content! (i.e.: user stored cloud files). Only run when needed to delete admin account and redo setup, delete/rename datadb and data dirs from Step 1
+sudo rm -R /var/lib/mysql # !!!WARNING!!! Deletes Volume content! (i.e.: user stored cloud files). Only run when needed to delete admin account and redo setup, delete/rename datadb and data dirs from Step 1
+sudo rm -R /var/www/html # !!!WARNING!!! Deletes Volume content! (i.e.: user stored cloud files). Only run when needed to delete admin account and redo setup, delete/rename datadb and data dirs from Step 1
 
 ```
 
