@@ -61,7 +61,6 @@ dnf install git-all
 # Fedora 37 Server x86_64 
 mkdir $HOME/nextcloud
 mkdir $HOME/nextcloud/data
-mkdir $HOME/nextcloud/data/dockerfile
 mkdir $HOME/nextcloud/datadb
 
 ```
