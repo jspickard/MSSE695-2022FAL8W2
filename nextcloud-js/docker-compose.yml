@@ -7,7 +7,7 @@ services:
     container_name: nxtclouddb
     command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW
     volumes:
-      - $HOME/nextcloud/datadb:/var/lib/mysql
+      - ${HOME}/nextcloud/datadb:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_PASSWORD=Password1!2@
@@ -21,11 +21,11 @@ services:
     restart: unless-stopped
     ports:
       - 8081:443
-      #- 8080:80
+      - 8080:80
     links:
       - db
     volumes:
-      - $HOME/nextcloud/data:/var/www/html
+      - ${HOME}/nextcloud/data:/var/www/html
     environment:
       - MYSQL_PASSWORD=Password1!2@
       - MYSQL_DATABASE=nextcloud
