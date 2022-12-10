@@ -59,18 +59,16 @@ dnf install git-all
 ```shell
 # Ubuntu Server 18.04.6 LTS 64-bit
 # Fedora 37 Server x86_64 
-mkdir $HOME/nextcloud
-mkdir $HOME/nextcloud/data
-mkdir $HOME/nextcloud/datadb
-sudo mkdir /var/lib/mysql
-sudo mkdir /var/www/html
+mkdir home/nextcloud
+mkdir home/nextcloud/data
+mkdir home/nextcloud/datadb
 
 ```
 2. Enter into new dir and clone this git.
 ```shell
 # Ubuntu Server 18.04.6 LTS 64-bit
 # Fedora 37 Server x86_64 
-cd $HOME/nextcloud/data
+cd home/nextcloud/data
 sudo git clone https://github.com/jspickard/MSSE695-2022FAL8W2.git
 
 
@@ -122,7 +120,7 @@ https://www.namecheap.com/support/knowledgebase/article.aspx/9821/38/apache-redi
 # Fedora 37 Server x86_64 
 sudo docker stop $(sudo docker ps -a -q)    # stop all containers
 sudo docker rm $(sudo docker ps -a -q)    # remove all containers
-cd $HOME/nextcloud/data
+cd home/nextcloud/data
 sudo rm -r ./MSSE695-2022FAL8W2    # delete copied git dir
 sudo docker image prune -a -f    # remove all images
 sudo rm -R /var/lib/mysql # !!!WARNING!!! Deletes Volume content! (i.e.: user stored cloud files). Only run when needed to delete admin account and redo setup, delete/rename datadb and data dirs from Step 1
