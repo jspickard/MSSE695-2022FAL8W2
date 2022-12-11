@@ -121,7 +121,7 @@ https://www.namecheap.com/support/knowledgebase/article.aspx/9821/38/apache-redi
 # Fedora 37 Server x86_64 
 sudo docker stop $(sudo docker ps -a -q)    # stop all containers
 sudo docker rm $(sudo docker ps -a -q)    # remove all containers
-sudo rm -r home/nextcloud/mygit/MSSE695-2022FAL8W2    # delete copied git dir
+sudo rm -r /home/nextcloud/mygit/MSSE695-2022FAL8W2    # delete copied git dir
 sudo docker image prune -a -f    # remove all images
 sudo rm -R /home/nextcloud/datadb # !!!WARNING!!! Deletes Volume content! (i.e.: user stored cloud files). Only run when needed to delete admin account and redo setup, delete/rename datadb and data dirs from Step 1
 sudo rm -R /home/nextcloud/data # !!!WARNING!!! Deletes Volume content! (i.e.: user stored cloud files). Only run when needed to delete admin account and redo setup, delete/rename datadb and data dirs from Step 1
