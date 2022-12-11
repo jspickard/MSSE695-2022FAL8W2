@@ -78,8 +78,7 @@ sudo git clone https://github.com/jspickard/MSSE695-2022FAL8W2.git
 ```shell
 # Ubuntu Server 18.04.6 LTS 64-bit
 # Fedora 37 Server x86_64 
-cd /home/nextcloud/mygit/MSSE695-2022FAL8W2/nextcloud-js/dockerfile
-sudo chmod 700 ./nextcloud-ssl-js.sh
+sudo chmod 700 /home/nextcloud/mygit/MSSE695-2022FAL8W2/nextcloud-js/dockerfile/nextcloud-ssl-js.sh
 
 ```
 4. Build docker image.
