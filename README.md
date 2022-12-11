@@ -59,16 +59,17 @@ dnf install git-all
 ```shell
 # Ubuntu Server 18.04.6 LTS 64-bit
 # Fedora 37 Server x86_64 
-mkdir home/nextcloud
-mkdir home/nextcloud/data
-mkdir home/nextcloud/datadb
+mkdir /home/nextcloud
+mkdir /home/nextcloud/data
+mkdir /home/nextcloud/datadb
+mkdir /home/nextcloud/mygit
 
 ```
 2. Enter into new dir and clone this git.
 ```shell
 # Ubuntu Server 18.04.6 LTS 64-bit
 # Fedora 37 Server x86_64 
-cd home/nextcloud/data
+cd /home/nextcloud/mygit
 sudo git clone https://github.com/jspickard/MSSE695-2022FAL8W2.git
 
 
@@ -77,7 +78,7 @@ sudo git clone https://github.com/jspickard/MSSE695-2022FAL8W2.git
 ```shell
 # Ubuntu Server 18.04.6 LTS 64-bit
 # Fedora 37 Server x86_64 
-cd ./MSSE695-2022FAL8W2/nextcloud-js/dockerfile
+cd /home/nextcloud/mygit/MSSE695-2022FAL8W2/nextcloud-js/dockerfile
 sudo chmod 700 ./nextcloud-ssl-js.sh
 
 ```
@@ -92,7 +93,7 @@ sudo docker build -t nextcloud-js .
 ```shell
 # Ubuntu Server 18.04.6 LTS 64-bit
 # Fedora 37 Server x86_64 
-cd ..
+cd /home/nextcloud/mygit/MSSE695-2022FAL8W2/nextcloud-js/
 sudo docker-compose up    # add -d to ignore details
 
 ```
@@ -120,11 +121,10 @@ https://www.namecheap.com/support/knowledgebase/article.aspx/9821/38/apache-redi
 # Fedora 37 Server x86_64 
 sudo docker stop $(sudo docker ps -a -q)    # stop all containers
 sudo docker rm $(sudo docker ps -a -q)    # remove all containers
-cd home/nextcloud/data
-sudo rm -r ./MSSE695-2022FAL8W2    # delete copied git dir
+sudo rm -r home/nextcloud/mygit/MSSE695-2022FAL8W2    # delete copied git dir
 sudo docker image prune -a -f    # remove all images
-sudo rm -R /var/lib/mysql # !!!WARNING!!! Deletes Volume content! (i.e.: user stored cloud files). Only run when needed to delete admin account and redo setup, delete/rename datadb and data dirs from Step 1
-sudo rm -R /var/www/html # !!!WARNING!!! Deletes Volume content! (i.e.: user stored cloud files). Only run when needed to delete admin account and redo setup, delete/rename datadb and data dirs from Step 1
+sudo rm -R /home/nextcloud/datadb # !!!WARNING!!! Deletes Volume content! (i.e.: user stored cloud files). Only run when needed to delete admin account and redo setup, delete/rename datadb and data dirs from Step 1
+sudo rm -R /home/nextcloud/data # !!!WARNING!!! Deletes Volume content! (i.e.: user stored cloud files). Only run when needed to delete admin account and redo setup, delete/rename datadb and data dirs from Step 1
 
 ```
 
