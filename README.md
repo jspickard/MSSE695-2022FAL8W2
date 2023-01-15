@@ -85,7 +85,7 @@ sudo chmod 700 /home/nextcloud/mygit/MSSE695-2022FAL8W2/nextcloud-js/dockerfile/
 ```shell
 # Ubuntu Server 18.04.6 LTS 64-bit
 # Fedora 37 Server x86_64 
-cd /home/nextcloud/mygit/MSSE695-2022FAL8W2/nextcloud-js
+cd /home/nextcloud/mygit/MSSE695-2022FAL8W2/nextcloud-js/dockerfile
 sudo docker build -t nextcloud-js .
 
 ```
