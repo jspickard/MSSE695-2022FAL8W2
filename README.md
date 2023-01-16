@@ -125,7 +125,16 @@ sudo rm -r /home/nextcloud/mygit/MSSE695-2022FAL8W2    # delete copied git dir
 sudo docker image prune -a -f    # remove all images
 sudo rm -R /home/nextcloud/datadb # !!!WARNING!!! Deletes Volume content! (i.e.: user stored cloud files). Only run when needed to delete admin account and redo setup, delete/rename datadb and data dirs from Step 1
 sudo rm -R /home/nextcloud/data # !!!WARNING!!! Deletes Volume content! (i.e.: user stored cloud files). Only run when needed to delete admin account and redo setup, delete/rename datadb and data dirs from Step 1
+```
 
+2. If changing IPs is necessary, make changes to file /var/www/html/config/config.php (global IP should be added here too).
+```shell
+# inside config.php
+  'trusted_domains' =>
+  array (
+    0 => '192.168.1.182:8081',
+    1 => 'raspberrypi.local:8081',
+  ),
 ```
 
 ## References
