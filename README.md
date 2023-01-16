@@ -129,7 +129,7 @@ sudo rm -R /home/nextcloud/data # !!!WARNING!!! Deletes Volume content! (i.e.: u
 
 2. If changing IPs is necessary, make changes to file /var/www/html/config/config.php (global IP should be added here too).
 ```shell
-# inside config.php
+# example of inside config.php
   'trusted_domains' =>
   array (
     0 => '192.168.1.182:8081',
