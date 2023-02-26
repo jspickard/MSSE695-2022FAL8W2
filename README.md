@@ -54,6 +54,7 @@ dnf install git-all
 ## Installation instructions
 #### Notes: 
 - Example commands have been provided. Use what is relative to your OS. 
+- These directories store the files (data) and user info (datadb). Other directories can be used (i.e.: if you were to use a seperate drive with a lot of storage); if that is desired, replace those directories here and in the nextcloud-js/docker-compose.yml file. 
 ### Steps
 1. Make the required directories.
 ```shell
@@ -65,6 +66,7 @@ mkdir /home/nextcloud/datadb
 mkdir /home/nextcloud/mygit
 
 ```
+
 2. Enter into new dir and clone this git.
 ```shell
 # Ubuntu Server 18.04.6 LTS 64-bit
