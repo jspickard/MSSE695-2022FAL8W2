@@ -139,5 +139,13 @@ sudo rm -R /home/nextcloud/data # !!!WARNING!!! Deletes Volume content! (i.e.: u
   ),
 ```
 
+3. If the following error is shown after setting up admin account and logging out "Your data directory is readable by other users" "Please change the permissions to 0770 so that the directory cannot be listed by other users", if changing permissions of the data location (both local volume dir and inside container, recommend reboot to test) does not work, the config.php can be revised again (with caution) as advised per https://github.com/nextcloud/server/blob/c364b0cb193f66ad15e2950c27113b40037d1bf6/config/config.sample.php#L747-L757
+```shell
+# example at end of config.php
+'check_data_directory_permissions' => false,
+```
+
+4. Had trouble on and off with setting data and datadb volumes elsewhere. Not entirely sure what fixed it, but it may have been a permissions issue. Changed both volume locations via "chmod 770 -R" and that seemed to fix it.
+
 ## References
 1. Open Source Tech Training. (2021, July 27). Nextcloud in Docker! opensourcetechtrn.blogspot.com. https://opensourcetechtrn.blogspot.com/2021/07/nextcloud-in-docker.html 
