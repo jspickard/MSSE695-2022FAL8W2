@@ -60,10 +60,10 @@ dnf install git-all
 ```shell
 # Ubuntu Server 18.04.6 LTS 64-bit
 # Fedora 37 Server x86_64 
-mkdir /home/nextcloud
-mkdir /home/nextcloud/data
-mkdir /home/nextcloud/datadb
-mkdir /home/nextcloud/mygit
+sudo mkdir /home/nextcloud
+sudo mkdir /home/nextcloud/data
+sudo mkdir /home/nextcloud/datadb
+sudo mkdir /home/nextcloud/mygit
 
 ```
 
