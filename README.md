@@ -56,7 +56,7 @@ dnf install git-all
 - Example commands have been provided. Use what is relative to your OS. 
 ### Steps
 1. Make the required directories.
-- These directories store the files (data) and user info (datadb). Other directories can be used (i.e.: if you were to use a seperate drive with a lot of storage); if that is desired, replace those directories here and in the nextcloud-js/docker-compose.yml file. 
+- These directories store the files (data) and user info (datadb).  
 ```shell
 # Ubuntu Server 18.04.6 LTS 64-bit
 # Fedora 37 Server x86_64 
@@ -64,8 +64,11 @@ sudo mkdir /home/nextcloud
 sudo mkdir /home/nextcloud/data
 sudo mkdir /home/nextcloud/datadb
 sudo mkdir /home/nextcloud/mygit
+sudo chmod 755 -R /home/nextcloud
 
 ```
+- Note 1: Other directories can be used (i.e.: if you were to use a seperate drive with a lot of storage); if that is desired, replace those directories here and the volumnes directories in the nextcloud-js/docker-compose.yml file.
+- Note 2: For using external drives, the following must be done manually: the drive identified, mount locataion created, mounted to that location, verified, then permanently mounted (recommend verifying through restart). The following site is a useful reference: https://linuxconfig.org/howto-mount-usb-drive-in-linux
 
 2. Enter into new dir and clone this git.
 ```shell
@@ -144,8 +147,6 @@ sudo rm -R /home/nextcloud/data # !!!WARNING!!! Deletes Volume content! (i.e.: u
 # example at end of config.php
 'check_data_directory_permissions' => false,
 ```
-
-4. Had trouble on and off with setting data and datadb volumes elsewhere. Not entirely sure what fixed it, but it may have been a permissions issue. Changed both volume locations via "chmod 770 -R" and that seemed to fix it.
 
 ## References
 1. Open Source Tech Training. (2021, July 27). Nextcloud in Docker! opensourcetechtrn.blogspot.com. https://opensourcetechtrn.blogspot.com/2021/07/nextcloud-in-docker.html 
