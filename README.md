@@ -60,15 +60,15 @@ dnf install git-all
 ```shell
 # Ubuntu Server 18.04.6 LTS 64-bit
 # Fedora 37 Server x86_64 
-sudo mkdir /home/nextcloud
-sudo mkdir /home/nextcloud/data
-sudo mkdir /home/nextcloud/datadb
-sudo mkdir /home/nextcloud/mygit
+sudo mkdir -p /home/nextcloud/mygit
 sudo chmod 755 -R /home/nextcloud
-
+export cloudDir="/home/nextcloud"
+sudo mkdir -p ${cloudDir}/data
+sudo mkdir -p ${cloudDir}/datadb
+sudo chmod 775 -R ${cloudDir}
 ```
 - Note 1: Other directories can be used (i.e.: if you were to use a seperate drive with a lot of storage); if that is desired, replace those directories here and the volumnes directories in the nextcloud-js/docker-compose.yml file.
-- Note 2: For using external drives, the following must be done manually: the drive identified, mount locataion created, mounted to that location, verified, then permanently mounted (recommend verifying through restart). The following site is a useful reference: https://linuxconfig.org/howto-mount-usb-drive-in-linux
+- Note 2: For using external drives (MUST BE ext4, not FAT), the following must be done manually: the drive identified, mount locataion created, mounted to that location, verified, then permanently mounted (recommend verifying through restart). The following site is a useful reference: https://linuxconfig.org/howto-mount-usb-drive-in-linux
 
 2. Enter into new dir and clone this git.
 ```shell
