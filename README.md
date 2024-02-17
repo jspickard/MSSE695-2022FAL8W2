@@ -143,7 +143,7 @@ sudo rm -R /home/nextcloud/data # !!!WARNING!!! Deletes Volume content! (i.e.: u
 ```
 
 3. Issues with config.php (mine was at /var/www/html/config/config.php)
--Note: These changes are in the docker container. You will need an editor like nano to change.
+- Note: These changes are in the docker container. You will need an editor like nano to change.
 ```shell
 # install nano
 apt-get update
