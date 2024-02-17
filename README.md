@@ -143,6 +143,12 @@ sudo rm -R /home/nextcloud/data # !!!WARNING!!! Deletes Volume content! (i.e.: u
 ```
 
 3. Issues with config.php (mine was at /var/www/html/config/config.php)
+-Note: These changes are in the docker container. You will need an editor like nano to change.
+```shell
+# install nano
+apt-get update
+apt-get install nano
+```
 - If the following error is shown after setting up admin account and logging out "Your data directory is readable by other users" "Please change the permissions to 0770 so that the directory cannot be listed by other users", if changing permissions of the data location (both local volume dir and inside container, recommend reboot to test) does not work, the config.php can be revised again (with caution) as advised per https://github.com/nextcloud/server/blob/c364b0cb193f66ad15e2950c27113b40037d1bf6/config/config.sample.php#L747-L757
 ```shell
 # example at end of config.php
